@@ -1,7 +1,8 @@
-openai
+
 streamlit
 python-dotenv
 requests
+openai
 docx
 python-docx
 pillow
