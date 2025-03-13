@@ -168,6 +168,16 @@ import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 response = requests.get("https://jansampark.mp.gov.in", verify=False)
+url = "https://jansampark.mp.gov.in"
+
+try:
+    response = requests.get(url, timeout=10)  # Set a timeout limit
+    response.raise_for_status()
+    st.write("Connection successful:", response.status_code)
+except requests.exceptions.Timeout:
+    st.error("Connection timed out. The server is not responding quickly.")
+except requests.exceptions.RequestException as e:
+    st.error(f"Request failed: {e}")
 
 # Set Streamlit page configuration at the very beginning
 st.set_page_config(page_title="Chakshu News Summarizer", layout="wide")
