@@ -6,3 +6,5 @@ docx
 python-docx
 pillow
 httpx
+urllib3
+requests
