@@ -176,11 +176,13 @@ client = OpenAI(
 )
 
 def image_to_base64(image_url):
-    """Download image and convert to Base64."""
+    """Download image and convert to Base64 with increased timeout."""
     try:
-        response = requests.get(image_url, verify=False)
+        response = requests.get(image_url, verify=False, timeout=15)  # Increased timeout
         response.raise_for_status()
         return base64.b64encode(response.content).decode('utf-8'), response.content
+    except requests.exceptions.Timeout:
+        raise Exception(f"Timeout error: The request to {image_url} took too long.")
     except requests.exceptions.RequestException as e:
         raise Exception(f"Failed to download image: {e}")
 
