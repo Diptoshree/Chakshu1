@@ -161,6 +161,13 @@ from docx.shared import Inches
 from dotenv import load_dotenv
 from io import BytesIO
 import httpx
+import requests
+import urllib3
+
+# Suppress only SSL warnings (not recommended for production)
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+response = requests.get("https://jansampark.mp.gov.in", verify=False)
 
 # Set Streamlit page configuration at the very beginning
 st.set_page_config(page_title="Chakshu News Summarizer", layout="wide")
