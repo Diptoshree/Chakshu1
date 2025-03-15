@@ -16,7 +16,8 @@ st.set_page_config(page_title="Chakshu News Summarizer", layout="wide")
 
 # Load environment variables
 load_dotenv()
-api_key = os.getenv("OPENAI_API_KEY")
+#api_key = os.getenv("OPENAI_API_KEY")
+api_key = os.getenv("OPENAI_API_KEY", st.secrets.get("OPENAI_API_KEY"))
 
 # Initialize OpenAI client
 client = OpenAI(
