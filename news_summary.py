@@ -1,4 +1,4 @@
-# import streamlit as st 
+#/*# import streamlit as st 
 # import os
 # import base64
 # import zipfile
@@ -197,7 +197,7 @@
 #                     doc_file = process_images(image_files)
 #                     st.download_button("Download Summary", doc_file, file_name="news_summary.docx", mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document")
 #             else:
-#                 st.error("No valid image files found in the ZIP. Only JPG and PNG are allowed.")
+#                 st.error("No valid image files found in the ZIP. Only JPG and PNG are allowed.")*/
 ####################zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
 import os
 import zipfile
